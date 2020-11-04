@@ -3,7 +3,7 @@ FROM python:3.7.4
 COPY requirements.txt /
 
 RUN pip install --upgrade pip
-RUN pip install pip==18.1
+#RUN pip install pip==18.1
 RUN pip install mitmproxy
 RUN pip install adblockparser
 RUN pip install 'Cython>=0.29.19,<1.0'  # for pyre2
