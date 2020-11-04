@@ -5,7 +5,7 @@ An mitmproxy adblock script!
 (c) 2015-2019 epitron
 """
 
-import re2
+import re2 as re
 from mitmproxy.script import concurrent
 from mitmproxy import http
 from adblockparser import AdblockRules
