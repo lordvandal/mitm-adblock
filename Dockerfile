@@ -7,6 +7,7 @@ RUN pip install --upgrade pip
 RUN pip install mitmproxy
 RUN pip install adblockparser
 RUN pip install 'Cython>=0.29.19,<1.0'  # for pyre2
+RUN pip install git+https://github.com/google/re2
 RUN pip install -r requirements.txt
 
 EXPOSE 8118
