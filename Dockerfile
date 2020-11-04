@@ -1,6 +1,6 @@
 FROM python:3.7.4
 
-COPY requirements.txt
+COPY requirements.txt .
 
 RUN pip install mitmproxy
 RUN pip install adblockparser
