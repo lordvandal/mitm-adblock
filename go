@@ -3,15 +3,14 @@
 FLOWDIR="flows"
 PORT=8118
 
-#if [ "$1" == "-c" ]; then
-#  CMD="mitmproxy"
-#else
-#  CMD="mitmdump"
-#fi
+if [ "$1" == "-c" ]; then
+  CMD="mitmproxy"
+else
+  CMD="mitmdump"
+fi
 
 # TODO: parse args properly (position-independant)
 if [ "$1" == "-d" ]; then
-  CMD="mitmdump"
   if [ ! -d "$FLOWDIR" ]; then
     mkdir "$FLOWDIR"
   fi
@@ -20,7 +19,6 @@ if [ "$1" == "-d" ]; then
   echo "* Dumping data to $DUMPFILE..."
   $CMD -s adblock.py -p $PORT -w "$DUMPFILE" --set stream_large_bodies=100k
 else
-  CMD="mitmproxy"
   echo "* Starting proxy server $CMD on port $PORT..."
   $CMD -s adblock.py -p $PORT --set stream_large_bodies=100k
 fi
