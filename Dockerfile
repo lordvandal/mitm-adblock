@@ -16,3 +16,4 @@ EXPOSE 8118
 RUN mkdir /code
 ADD . /code
 CMD cd code && ./go # -d for debug
+
